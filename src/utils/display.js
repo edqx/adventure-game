@@ -20,10 +20,14 @@ function getWindowSize() {
 /**
  * Flush the contents of the screen to make room for the next display.
  */
-function clrScreen() {
+export function clrScreen() {
     const winsz = getWindowSize();
 
     for (let i = 0; i < winsz.rows.length; i++) {
         console.log("\n");
     }
+}
+
+export default {
+    clrScreen
 }

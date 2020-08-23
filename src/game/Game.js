@@ -1,3 +1,5 @@
+import EventEmitter from "events"
+
 import Player from "./Player.js"
 import State from "./State.js"
 
@@ -18,13 +20,16 @@ import State from "./State.js"
 
 /**
  * Represents a game of the untitled aventure game.
+ * @extends {EventEmitter}
  */
-export default class Game {
+export default class Game extends EventEmitter {
     /**
      * Instantiate a game of the untitled adventure game.
      * @param {GameSave} save The save to load.
      */
     constructor(save) {
+        super();
+        
         /**
          * The state of the game.
          * @type {State}
